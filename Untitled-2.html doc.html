@@ -1,0 +1,751 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Lumina AI — Scholarly AI Study Assistant</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode": "class", "theme": {"extend": {"colors": {"surface-container": "#eaedff", "inverse-on-surface": "#eef0ff", "on-primary-fixed-variant": "#3b35a7", "on-primary-fixed": "#0f0069", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "surface-tint": "#544fc0", "surface-variant": "#dae2fd", "inverse-surface": "#283044", "on-error": "#ffffff", "error": "#ba1a1a", "tertiary-fixed-dim": "#b4c5ff", "surface-bright": "#faf8ff", "surface-container-highest": "#dae2fd", "error-container": "#ffdad6", "primary-fixed": "#e2dfff", "inverse-primary": "#c3c0ff", "on-surface-variant": "#464553", "secondary-fixed": "#ffdcc3", "primary-fixed-dim": "#c3c0ff", "on-tertiary-fixed": "#00174b", "on-secondary": "#ffffff", "secondary": "#904d00", "surface-container-high": "#e2e7ff", "secondary-fixed-dim": "#ffb77d", "surface-container-low": "#f2f3ff", "on-secondary-container": "#663500", "secondary-container": "#fe932c", "primary-container": "#3730a3", "on-background": "#131b2e", "outline-variant": "#c8c4d5", "outline": "#777584", "surface-dim": "#d2d9f4", "tertiary": "#00266f", "on-tertiary-fixed-variant": "#003ea8", "primary": "#1f108e", "on-secondary-fixed-variant": "#6e3900", "surface": "#faf8ff", "on-primary": "#ffffff", "on-surface": "#131b2e", "on-tertiary-container": "#92acff", "tertiary-container": "#003a9f", "on-secondary-fixed": "#2f1500", "on-primary-container": "#a9a7ff", "tertiary-fixed": "#dbe1ff", "on-tertiary": "#ffffff", "background": "#faf8ff"}, "borderRadius": {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"}, "spacing": {"gutter-mobile": "1rem", "gutter-desktop": "2rem", "space-md": "1rem", "space-lg": "1.5rem", "gutter-tablet": "1.5rem", "space-xl": "2rem", "max-text-ch": "68ch", "space-xs": "0.5rem", "space-2xs": "0.25rem", "space-sm": "0.75rem", "space-3xl": "4rem", "max-container": "1280px", "space-2xl": "3rem"}, "fontFamily": {"display-hero-mobile": ["Newsreader"], "label-caps": ["Inter"], "headline-md": ["Newsreader"], "display-hero": ["Newsreader"], "body-ui-semibold": ["Inter"], "body-ui-sm": ["Inter"], "body-editorial-base": ["Newsreader"], "headline-lg": ["Newsreader"], "headline-sm": ["Newsreader"], "body-ui-base": ["Inter"], "body-ui-lg": ["Inter"], "label-code": ["JetBrains Mono"], "body-editorial-lg": ["Newsreader"]}, "fontSize": {"display-hero-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "500"}], "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}], "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "display-hero": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "500"}], "body-ui-semibold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}], "body-ui-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "body-editorial-base": ["17px", {"lineHeight": "28px", "fontWeight": "400"}], "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "500"}], "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}], "body-ui-base": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "body-ui-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}], "label-code": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}], "body-editorial-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}]}}}};</script></head><body class="bg-surface font-body-ui-base text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1280px] mx-auto px-gutter-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-xs" data-path="overview" href="#"><img alt="Brand logo. - Primary color: #3730a3 - Font: newsreader - Mode: light - Roundness: rounded-sm" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W-KAUClYxNqlqIk6Mko0vO_pF8UXcXtDJWQ_G04a7fi-t2Go1is4-tNMNjcJtc6GAo5mAWNJTKTwm5_nXegFPcrvHFQNJ3bEreYuIW9T_OuJbt36R47zifrxu9uHXKV5b3oNRaEv_mEXeICHSvldH_OuoiXdDHKTSHEFU54rkVzmHcCr_GbsTzrRNcrCkK-qapBLuqU04eQj0CR5LfSjNRKAjkEwLSZm-iP6lBYkTMDGMZ8Jies0qsPbE"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">Lumina AI</span></a><span class="hidden sm:inline-flex items-center px-space-xs py-space-2xs rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">Study Smarter</span></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-body-ui-semibold"><a class="font-body-ui-base text-body-ui-base text-on-surface-variant hover:text-on-surface transition-colors" data-path="features" href="#">Features</a><a class="font-body-ui-base text-body-ui-base text-on-surface-variant hover:text-on-surface transition-colors" data-path="methodology" href="#">Methodology</a><a class="font-body-ui-base text-body-ui-base text-on-surface-variant hover:text-on-surface transition-colors" data-path="for-students" href="#">For Students</a><a class="font-body-ui-base text-body-ui-base text-on-surface-variant hover:text-on-surface transition-colors" data-path="pricing" href="#">Pricing</a><a class="font-body-ui-base text-body-ui-base text-on-surface-variant hover:text-on-surface transition-colors" data-path="stories" href="#">Stories</a></nav><div class="flex items-center gap-space-md"><a class="font-body-ui-semibold text-body-ui-semibold text-on-surface-variant hover:text-on-surface px-space-xs py-space-xs transition-colors" data-path="sign-in" href="#">Sign In</a><a class="inline-flex items-center justify-center px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary font-body-ui-semibold text-body-ui-semibold hover:bg-primary transition-colors" data-path="get-started" href="#">Launch App</a><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UttR01HDOdxcSEQ8VH7vln_Zni3uaQachpqMZGCyLRlUwKm71V4VJ5FWTS6_e-3MPLbWn0XXigW-rbtryyQeL-DLrsTX4p0LNV6cgXMOErqjqwj2BXlEhX-Xq8Pa0pahFRfIch2O-6N3vjKj9QXhdJMRcwrubGO_0au-zCXb2IG6CQaz_wLwcjypH4nEh0WHo7w-TV1Ul8xRDxHJyI4wkQ2dNMENJB4GbjXF3PCqGfwkjZESxUfgAqjaY"></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Announcement & Hero Section -->
+<section class="relative overflow-hidden pt-space-xl pb-space-3xl px-gutter-mobile md:px-gutter-desktop">
+<!-- Subtle architectural ambient geometry -->
+<div class="absolute top-0 right-1/4 w-96 h-96 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-48 left-10 w-72 h-72 bg-secondary-fixed/40 rounded-full blur-2xl pointer-events-none -z-10"></div>
+<div class="max-w-max-container mx-auto flex flex-col items-center text-center">
+<!-- Announcement Pill Badge -->
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-2xs rounded-full bg-surface-container-high text-on-surface hover:bg-surface-container transition-all shadow-sm mb-space-lg group" data-path="changelog" href="#">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-ui-sm text-body-ui-sm font-medium text-on-surface-variant group-hover:text-on-surface">
+          Introducing Lumina 2.4 — Precision Spaced Repetition meets Academic LLMs
+        </span>
+<span class="material-symbols-outlined text-[16px] text-primary transition-transform group-hover:translate-x-0.5">arrow_forward</span>
+</a>
+<!-- Headline -->
+<h1 class="font-display-hero text-display-hero text-on-surface max-w-[22ch] tracking-tight mb-space-md">
+        The academic AI that understands how <span class="italic font-normal font-display-hero text-primary underline decoration-secondary decoration-2 underline-offset-8">memory actually works.</span>
+</h1>
+<!-- Subtitle -->
+<p class="font-body-editorial-lg text-body-editorial-lg text-on-surface-variant max-w-[62ch] mb-space-xl">
+        Turn complex lectures, dense textbooks, and syllabus milestones into active recall schedules, adaptive practice quizzes, and an empathetic AI tutor grounded strictly in your verified notes.
+      </p>
+<!-- Dual Call To Actions -->
+<div class="flex flex-col sm:flex-row items-center gap-space-md mb-space-sm w-full sm:w-auto">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-xl py-space-sm rounded-lg bg-primary-container text-on-primary font-body-ui-semibold text-body-ui-semibold shadow-md hover:bg-primary transition-all duration-200" data-path="get-started" href="#">
+<span>Start Studying for Free</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-body-ui-semibold text-body-ui-semibold shadow-sm hover:bg-surface-container-low transition-all" id="tour-modal-trigger" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">play_circle</span>
+<span>Watch 2-Min Interactive Tour</span>
+</button>
+</div>
+<p class="font-label-code text-label-code text-on-surface-variant/80 tracking-wide mb-space-2xl">
+        No credit card required • Free tier for all university scholars
+      </p>
+<!-- Social Proof Strip -->
+<div class="w-full max-w-4xl pt-space-md border-t-0 flex flex-col items-center">
+<p class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-space-md">
+          Loved by 85,000+ scholars &amp; researchers at
+        </p>
+<div class="flex flex-wrap items-center justify-center gap-x-space-2xl gap-y-space-md opacity-80">
+<div class="flex items-center gap-1.5 font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance</span> Stanford
+          </div>
+<div class="flex items-center gap-1.5 font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">science</span> MIT
+          </div>
+<div class="flex items-center gap-1.5 font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">menu_book</span> Oxford
+          </div>
+<div class="flex items-center gap-1.5 font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">school</span> Berkeley
+          </div>
+<div class="flex items-center gap-1.5 font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">biotech</span> Johns Hopkins
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Product Preview / Workspace Showcase -->
+<section class="relative px-gutter-mobile md:px-gutter-desktop pb-space-3xl">
+<div class="max-w-max-container mx-auto">
+<div class="relative rounded-2xl bg-surface-container-lowest shadow-xl p-space-md sm:p-space-xl">
+<!-- Window Mockup Bar -->
+<div class="flex items-center justify-between pb-space-md mb-space-lg">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error-container"></span>
+<span class="w-3 h-3 rounded-full bg-secondary-fixed"></span>
+<span class="w-3 h-3 rounded-full bg-surface-container-high"></span>
+<span class="ml-space-sm font-label-code text-label-code text-on-surface-variant">Lumina Desktop Workspace — Spring Semester 2025</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-surface-container text-primary font-label-code text-label-code font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> FSRS-4.5 Active
+            </span>
+</div>
+</div>
+<!-- Grid Body of Lumina Interface -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Workspace Sidebar & Active Goal -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Active Subject Goal Card -->
+<div class="rounded-xl bg-surface-container-low p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-secondary font-semibold">Active Milestone</span>
+<span class="font-label-code text-label-code font-semibold text-on-surface">Exam in 6d</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">
+                Organic Chemistry II
+              </h3>
+<p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant mb-space-md">
+                Reaction Mechanisms, Stereochemistry &amp; Conjugated Dienes
+              </p>
+<!-- Progress Bar Component -->
+<div class="w-full bg-surface-container-high rounded-full h-2.5 mb-space-xs overflow-hidden">
+<div class="bg-primary-container h-2.5 rounded-full transition-all duration-500" style="width: 68%;"></div>
+</div>
+<div class="flex items-center justify-between font-label-code text-label-code text-on-surface-variant mb-space-md">
+<span>68% Deck Retention</span>
+<span class="text-primary font-medium">42 mins left today</span>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-space-2xs px-space-xs rounded bg-primary-container text-on-primary font-body-ui-semibold text-body-ui-sm text-center">
+                  Resume Focus
+                </button>
+<button class="p-space-2xs rounded bg-surface-container-lowest text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+<!-- 4 Core Quick Access Tools -->
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm text-left hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-primary text-[24px] mb-space-2xs group-hover:scale-110 transition-transform">article</span>
+<div class="font-body-ui-semibold text-body-ui-sm text-on-surface">Summarize Notes</div>
+<div class="font-body-ui-sm text-body-ui-sm text-on-surface-variant text-[11px]">PDF, Audio, Slides</div>
+</button>
+<button class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm text-left hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-secondary text-[24px] mb-space-2xs group-hover:scale-110 transition-transform">quiz</span>
+<div class="font-body-ui-semibold text-body-ui-sm text-on-surface">Practice Quiz</div>
+<div class="font-body-ui-sm text-body-ui-sm text-on-surface-variant text-[11px]">Diagnostic recall</div>
+</button>
+<button class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm text-left hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-primary text-[24px] mb-space-2xs group-hover:scale-110 transition-transform">psychology</span>
+<div class="font-body-ui-semibold text-body-ui-sm text-on-surface">Explain Concept</div>
+<div class="font-body-ui-sm text-body-ui-sm text-on-surface-variant text-[11px]">Socratic method</div>
+</button>
+<button class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm text-left hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-tertiary-container text-[24px] mb-space-2xs group-hover:scale-110 transition-transform">calendar_today</span>
+<div class="font-body-ui-semibold text-body-ui-sm text-on-surface">Study Schedule</div>
+<div class="font-body-ui-sm text-body-ui-sm text-on-surface-variant text-[11px]">FSRS Spaced intervals</div>
+</button>
+</div>
+</div>
+<!-- Center/Right: Live Synthesis & Contextual AI Drill -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Simulated Active Synthesis Deck -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-lg">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-space-2xs rounded bg-surface-container text-primary font-label-code text-label-code font-semibold">Concept Card 14 of 48</span>
+<span class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">Lecture 18 • Prof. Chen</span>
+</div>
+<div class="flex items-center gap-1 text-secondary font-label-code text-label-code font-semibold">
+<span class="material-symbols-outlined text-[16px]">local_fire_department</span>
+<span>14 Day Streak</span>
+</div>
+</div>
+<!-- Content card -->
+<div class="p-space-lg rounded-xl bg-surface-bright mb-space-lg">
+<div class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider mb-space-2xs">Active Recall Query</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">
+                  Explain the kinetic vs. thermodynamic control during electrophilic addition of HBr to 1,3-butadiene at 0°C vs 40°C.
+                </h4>
+<p class="font-body-editorial-base text-body-editorial-base text-on-surface-variant">
+                  At lower temperatures (0°C), the 1,2-addition product predominates because the proximity effect governs the faster pathway with lower activation barrier. At elevated temperatures (40°C), equilibrium favors the thermodynamically stable 1,4-adduct due to higher alkyl substitution of the alkene.
+                </p>
+</div>
+<!-- Bottom tactile feedback controls -->
+<div class="flex items-center justify-between gap-space-xs pt-space-xs">
+<span class="font-label-code text-label-code text-on-surface-variant hidden sm:inline">Rate Confidence:</span>
+<div class="grid grid-cols-4 gap-space-xs flex-1 max-w-md">
+<button class="py-space-2xs px-space-xs rounded bg-surface-container text-on-surface font-body-ui-sm text-body-ui-sm font-semibold hover:bg-surface-container-high transition-colors">Again (&lt;10m)</button>
+<button class="py-space-2xs px-space-xs rounded bg-surface-container text-on-surface font-body-ui-sm text-body-ui-sm font-semibold hover:bg-surface-container-high transition-colors">Hard (1d)</button>
+<button class="py-space-2xs px-space-xs rounded bg-primary text-on-primary font-body-ui-sm text-body-ui-sm font-semibold shadow-sm">Good (3d)</button>
+<button class="py-space-2xs px-space-xs rounded bg-surface-container text-on-surface font-body-ui-sm text-body-ui-sm font-semibold hover:bg-surface-container-high transition-colors">Easy (7d)</button>
+</div>
+</div>
+</div>
+<!-- Floating Contextual AI Tutor Alert & Live Retention Stats -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
+<!-- AI Coach Diagnostic Notification -->
+<div class="md:col-span-7 rounded-xl bg-surface-container-high p-space-md flex items-start gap-space-sm shadow-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-body-ui-semibold text-body-ui-sm text-on-surface">Lumina Socratic Coach</span>
+<span class="font-label-code text-label-code text-primary font-medium">Just now</span>
+</div>
+<p class="font-body-ui-base text-body-ui-sm text-on-surface-variant mb-space-xs">
+                    "Hey Alex! You hesitated twice on electrophilic addition to conjugated dienes. Let's do a 3-minute diagnostic drill before your forgetting curve drops below 80%."
+                  </p>
+<button class="inline-flex items-center gap-1 font-body-ui-semibold text-body-ui-sm text-primary hover:underline">
+<span>Start Diagnostic Drill</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Retention Curve Sparkline Badge -->
+<div class="md:col-span-5 rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-semibold">Memory Consolidation</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-secondary font-label-code text-label-code font-bold">+34% vs baseline</span>
+</div>
+<div class="py-space-xs">
+<!-- SVG Retention Chart -->
+<svg class="w-full h-14 overflow-visible" fill="none" viewBox="0 0 200 60">
+<path class="text-primary" d="M0,50 Q40,48 80,30 T160,15 T200,8" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path class="text-primary/10" d="M0,50 Q40,48 80,30 T160,15 T200,8 L200,60 L0,60 Z" fill="currentColor"></path>
+<circle class="fill-secondary" cx="80" cy="30" r="3.5"></circle>
+<circle class="fill-primary" cx="160" cy="15" r="3.5"></circle>
+<circle class="fill-primary" cx="200" cy="8" r="4"></circle>
+</svg>
+</div>
+<div class="flex items-center justify-between font-label-code text-label-code text-on-surface-variant">
+<span>Day 1: 42%</span>
+<span>Day 21: 91% Recall</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Feature Pillars (3-Column Grid) -->
+<section class="py-space-3xl px-gutter-mobile md:px-gutter-desktop bg-surface-container-low">
+<div class="max-w-max-container mx-auto">
+<div class="text-center max-w-max-text-ch mx-auto mb-space-2xl">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary font-semibold block mb-space-2xs">Engineered for Academic Rigor</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">
+          Precision tools designed around cognitive science, not conversational gimmicks.
+        </h2>
+<p class="font-body-editorial-base text-body-editorial-base text-on-surface-variant">
+          General-purpose chatbots encourage passive reading and generate plausible fabrications. Lumina enforces active intellectual retrieval grounded in your exact course material.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Pillar Card 1 -->
+<div class="rounded-xl bg-surface-container-lowest p-space-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-lg">
+<span class="material-symbols-outlined text-[28px]">verified_user</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-primary font-semibold block mb-space-2xs">Curriculum Anchored</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">
+              Syllabus-Grounded AI Tutor
+            </h3>
+<p class="font-body-editorial-base text-body-editorial-base text-on-surface-variant mb-space-lg">
+              Context-aware assistance trained exclusively on your upload batch: seminar slides, lecture audio transcripts, and primary texts. It cites exact page coordinates and never hallucinates outside your professor's scope.
+            </p>
+</div>
+<div class="pt-space-md border-t-0 flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Zero out-of-scope hallucinations</span>
+</div>
+</div>
+<!-- Pillar Card 2 -->
+<div class="rounded-xl bg-surface-container-lowest p-space-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-space-lg">
+<span class="material-symbols-outlined text-[28px]">update</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-secondary font-semibold block mb-space-2xs">Cognitive Scheduling</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">
+              Automated Spaced Retention
+            </h3>
+<p class="font-body-editorial-base text-body-editorial-base text-on-surface-variant mb-space-lg">
+              Built-in FSRS-4.5 scheduling engine mathematically models your forgetting curve for each atomic concept. It surfaces cards at the optimal moment of near-decay to solidify long-term synaptic retention.
+            </p>
+</div>
+<div class="pt-space-md border-t-0 flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>FSRS-4.5 decay algorithms</span>
+</div>
+</div>
+<!-- Pillar Card 3 -->
+<div class="rounded-xl bg-surface-container-lowest p-space-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-tertiary-container mb-space-lg">
+<span class="material-symbols-outlined text-[28px]">dynamic_form</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-primary font-semibold block mb-space-2xs">Active Testing</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">
+              Active Synthesis &amp; Diagnostic Quizzes
+            </h3>
+<p class="font-body-editorial-base text-body-editorial-base text-on-surface-variant mb-space-lg">
+              Transform 50-slide decks and audio recordings into targeted multiple-choice, synthesis problems, and reaction diagrams with one click. Test your understanding under exam pressure before test day.
+            </p>
+</div>
+<div class="pt-space-md border-t-0 flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Step-by-step diagnostic scoring</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- "The Science of Learning" / Cognitive Methodology Section -->
+<section class="py-space-3xl px-gutter-mobile md:px-gutter-desktop">
+<div class="max-w-max-container mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+<!-- Left: Contrast Matrix -->
+<div class="lg:col-span-7">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary font-semibold mb-space-2xs block">
+            Pedagogical Architecture
+          </span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-md">
+            Why generalist chat LLMs fail students — and how Lumina enforces genuine cognitive mastery.
+          </h2>
+<p class="font-body-editorial-base text-body-editorial-base text-on-surface-variant mb-space-xl">
+            Reading polished answers produces the "illusion of competence." You feel like you know it, but fail on the exam. Lumina leverages the testing effect: forced retrieval strengthens neural pathways.
+          </p>
+<!-- Side-by-side comparison table / cards -->
+<div class="space-y-space-sm">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2 text-error font-body-ui-semibold text-body-ui-sm mb-1">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+                  Passive Chatbots
+                </div>
+<p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">
+                  Gives students complete answers directly, encouraging passive consumption and rapid forgetting within 48 hours.
+                </p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container">
+<div class="flex items-center gap-2 text-primary font-body-ui-semibold text-body-ui-sm mb-1">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                  Lumina Socratic Engine
+                </div>
+<p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">
+                  Prompts you to explain your reasoning first, diagnosing your conceptual gaps and enforcing active cognitive retrieval.
+                </p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2 text-error font-body-ui-semibold text-body-ui-sm mb-1">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+                  Generic Internet Context
+                </div>
+<p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">
+                  Cites conflicting nomenclature or notations from random web pages that contradict your professor's grading rubric.
+                </p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container">
+<div class="flex items-center gap-2 text-primary font-body-ui-semibold text-body-ui-sm mb-1">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                  Courseware Grounding
+                </div>
+<p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">
+                  Strictly synchronized to your course syllabus, lecture transcripts, and assigned textbook reading sets.
+                </p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2 text-error font-body-ui-semibold text-body-ui-sm mb-1">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+                  Inefficient Cram Sessions
+                </div>
+<p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">
+                  Encourages marathon overnight cram sessions where cognitive retention drops precipitously after 90 minutes.
+                </p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container">
+<div class="flex items-center gap-2 text-primary font-body-ui-semibold text-body-ui-sm mb-1">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                  Micro-Spaced Intervals
+                </div>
+<p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">
+                  25-minute targeted retention sessions distributed over 21 days according to mathematical memory decay rates.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Spaced Repetition Mastery Timeline Card -->
+<div class="lg:col-span-5">
+<div class="rounded-2xl bg-surface-container-lowest p-space-xl shadow-xl">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-caps text-label-caps uppercase text-primary font-semibold">Memory Trajectory</span>
+<span class="font-label-code text-label-code text-on-surface-variant">FSRS v4.5 Math</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">
+              The 4 Stages of Synaptic Consolidation
+            </h3>
+<p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant mb-space-lg">
+              Visualizing how each spaced recall review flattens the forgetting curve until knowledge becomes permanent.
+            </p>
+<!-- Interactive Stage Stepper -->
+<div class="space-y-space-md relative">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-code text-label-code font-bold flex items-center justify-center shrink-0">
+                  01
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-body-ui-semibold text-body-ui-base text-on-surface">Exposure</span>
+<span class="font-label-code text-label-code text-on-surface-variant/80">Day 0</span>
+</div>
+<p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">
+                    Lecture or textbook reading session. Rapid 70% forgetting occurs within 24 hours without immediate reinforcement.
+                  </p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-code text-label-code font-bold flex items-center justify-center shrink-0">
+                  02
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-body-ui-semibold text-body-ui-base text-on-surface">Recall</span>
+<span class="font-label-code text-label-code text-on-surface-variant/80">Day 1</span>
+</div>
+<p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">
+                    First Socratic review drill. Memory trace is reconstituted right before the initial steep dropoff.
+                  </p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-code text-label-code font-bold flex items-center justify-center shrink-0">
+                  03
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-body-ui-semibold text-body-ui-base text-on-surface">Consolidation</span>
+<span class="font-label-code text-label-code text-secondary font-medium">Day 5</span>
+</div>
+<p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">
+                    Diagnostic cross-chapter synthesis quiz. Neural pathways between concepts link into long-term schema.
+                  </p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary font-label-code text-label-code font-bold flex items-center justify-center shrink-0">
+                  04
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-body-ui-semibold text-body-ui-base text-on-surface">Mastery</span>
+<span class="font-label-code text-label-code text-primary font-medium">Day 21+</span>
+</div>
+<p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">
+                    Concept is retained indefinitely with &gt;90% instant retrieval probability under exam stress.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Real Student Success Stories -->
+<section class="py-space-3xl px-gutter-mobile md:px-gutter-desktop bg-surface-container-low">
+<div class="max-w-max-container mx-auto">
+<div class="text-center max-w-max-text-ch mx-auto mb-space-2xl">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary font-semibold block mb-space-2xs">Verified Academic Outcomes</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">
+          Hear from students who traded cramming for deep retention.
+        </h2>
+<p class="font-body-editorial-base text-body-editorial-base text-on-surface-variant">
+          Across competitive STEM programs, law reviews, and doctoral defenses, Lumina provides the intellectual leverage needed to perform at the highest academic standard.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Testimonial 1 (Alex Vance) with https://lh3.googleusercontent.com/aida/AEtjO1UttR01HDOdxcSEQ8VH7vln_Zni3uaQachpqMZGCyLRlUwKm71V4VJ5FWTS6_e-3MPLbWn0XXigW-rbtryyQeL-DLrsTX4p0LNV6cgXMOErqjqwj2BXlEhX-Xq8Pa0pahFRfIch2O-6N3vjKj9QXhdJMRcwrubGO_0au-zCXb2IG6CQaz_wLwcjypH4nEh0WHo7w-TV1Ul8xRDxHJyI4wkQ2dNMENJB4GbjXF3PCqGfwkjZESxUfgAqjaY -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-secondary mb-space-md">
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+</div>
+<p class="font-body-editorial-base text-body-editorial-base text-on-surface mb-space-lg italic">
+              "Lumina cut my study time for Organic Chem by 40% while bumping my midterm average from a B to an A+. The Socratic AI tutor drills me on exactly where I make mistakes instead of coddling me with answers."
+            </p>
+</div>
+<div class="flex items-center gap-space-sm pt-space-md">
+<img alt="Alex Vance, Pre-Med student" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UttR01HDOdxcSEQ8VH7vln_Zni3uaQachpqMZGCyLRlUwKm71V4VJ5FWTS6_e-3MPLbWn0XXigW-rbtryyQeL-DLrsTX4p0LNV6cgXMOErqjqwj2BXlEhX-Xq8Pa0pahFRfIch2O-6N3vjKj9QXhdJMRcwrubGO_0au-zCXb2IG6CQaz_wLwcjypH4nEh0WHo7w-TV1Ul8xRDxHJyI4wkQ2dNMENJB4GbjXF3PCqGfwkjZESxUfgAqjaY">
+<div>
+<div class="font-body-ui-semibold text-body-ui-base text-on-surface">Alex Vance</div>
+<div class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">Pre-Med &amp; Chemistry • Columbia</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 (Marcus Thorne) -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-secondary mb-space-md">
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+</div>
+<p class="font-body-editorial-base text-body-editorial-base text-on-surface mb-space-lg italic">
+              "Summarizing 40-page papers into key theorem proofs with instant citations changed my entire literature review workflow. I can query five papers simultaneously and verify against raw equations."
+            </p>
+</div>
+<div class="flex items-center gap-space-sm pt-space-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center font-headline-sm text-headline-sm text-primary font-bold">
+              MT
+            </div>
+<div>
+<div class="font-body-ui-semibold text-body-ui-base text-on-surface">Marcus Thorne</div>
+<div class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">Graduate CS Researcher • MIT</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 (Priya Patel) -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-secondary mb-space-md">
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+</div>
+<p class="font-body-editorial-base text-body-editorial-base text-on-surface mb-space-lg italic">
+              "The spaced repetition schedule takes all the cognitive overload out of exam week. I no longer panic about what to review today. I just open Lumina and follow the prescribed focus blocks."
+            </p>
+</div>
+<div class="flex items-center gap-space-sm pt-space-md">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center font-headline-sm text-headline-sm font-bold">
+              PP
+            </div>
+<div>
+<div class="font-body-ui-semibold text-body-ui-base text-on-surface">Priya Patel</div>
+<div class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">Law &amp; Economics • Oxford</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Transparent Student Pricing -->
+<section class="py-space-3xl px-gutter-mobile md:px-gutter-desktop">
+<div class="max-w-max-container mx-auto">
+<div class="text-center max-w-max-text-ch mx-auto mb-space-2xl">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-primary font-semibold block mb-space-2xs">Straightforward Investment</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">
+          Simple academic pricing. Built for students, not enterprise sales.
+        </h2>
+<p class="font-body-editorial-base text-body-editorial-base text-on-surface-variant">
+          Start for free to explore Socratic synthesis. Upgrade when finals approach for unlimited notes, audio ingestion, and personalized exam schedules.
+        </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg items-stretch">
+<!-- Tier 1: Free Scholar -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-xl shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-semibold block mb-space-xs">Starter Tier</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Free Scholar</h3>
+<p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant mb-space-lg">Essential synthesis tools for lighter course loads.</p>
+<div class="flex items-baseline gap-1 mb-space-lg">
+<span class="font-display-hero text-display-hero text-on-surface font-semibold">$0</span>
+<span class="font-body-ui-base text-body-ui-base text-on-surface-variant">/ forever</span>
+</div>
+<ul class="space-y-space-sm font-body-ui-base text-body-ui-base text-on-surface-variant mb-space-xl">
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>5 Document Summaries per month</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>Standard Socratic AI tutor</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>Basic flashcard deck generator</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>Web &amp; Mobile sync</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-space-sm px-space-md rounded-lg bg-surface-container text-on-surface font-body-ui-semibold text-body-ui-semibold text-center hover:bg-surface-container-high transition-colors" data-path="signup-free" href="#">
+            Get Started Free
+          </a>
+</div>
+<!-- Tier 2: Pro Academic (Most Popular) -->
+<div class="relative rounded-2xl bg-surface-container-lowest p-space-xl shadow-xl flex flex-col justify-between -mt-2 lg:-mt-4 bg-gradient-to-b from-surface-container-lowest to-surface-container-low">
+<!-- Amber "Student Favorite" Badge -->
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-space-md py-1 rounded-full bg-secondary text-surface-bright font-label-caps text-label-caps uppercase tracking-wider font-semibold shadow-sm">
+            Student Favorite • 50% Off
+          </div>
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-primary font-semibold block">Full Scholarly Power</span>
+<span class="font-label-code text-label-code text-secondary font-medium">Billed Annually</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Pro Academic</h3>
+<p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant mb-space-lg">For intensive stem, medical, legal, and honors studies.</p>
+<div class="flex items-baseline gap-1 mb-space-lg">
+<span class="font-display-hero text-display-hero text-primary font-semibold">$12</span>
+<span class="font-body-ui-base text-body-ui-base text-on-surface-variant">/ month</span>
+</div>
+<ul class="space-y-space-sm font-body-ui-base text-body-ui-base text-on-surface mb-space-xl">
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-medium">Unlimited notes, textbook &amp; lecture audio</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-medium">FSRS-4.5 adaptive spaced scheduler</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-medium">Custom Socratic tutor with rubric grading</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-medium">Exam countdown &amp; diagnostic drill mode</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span>Priority fast inference server latency</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-space-sm px-space-md rounded-lg bg-primary-container text-on-primary font-body-ui-semibold text-body-ui-semibold text-center hover:bg-primary shadow-md transition-all" data-path="signup-pro" href="#">
+            Start 14-Day Free Pro Trial
+          </a>
+</div>
+<!-- Tier 3: Campus Lab & Cohort -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-xl shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-semibold block mb-space-xs">Research &amp; Study Groups</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Campus Lab &amp; Cohort</h3>
+<p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant mb-space-lg">For research groups, study circles, and campus cohorts.</p>
+<div class="flex items-baseline gap-1 mb-space-lg">
+<span class="font-display-hero text-display-hero text-on-surface font-semibold">$29</span>
+<span class="font-body-ui-base text-body-ui-base text-on-surface-variant">/ seat / month</span>
+</div>
+<ul class="space-y-space-sm font-body-ui-base text-body-ui-base text-on-surface-variant mb-space-xl">
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>Shared collaborative course decks</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>Professor syllabus auto-sync integration</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>Peer diagnostic study rooms</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>Institutional retention analytics dashboard</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-space-sm px-space-md rounded-lg bg-surface-container text-on-surface font-body-ui-semibold text-body-ui-semibold text-center hover:bg-surface-container-high transition-colors" data-path="contact-cohort" href="#">
+            Contact Academic Sales
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Final High-Impact Call-to-Action Section -->
+<section class="py-space-3xl px-gutter-mobile md:px-gutter-desktop">
+<div class="max-w-max-container mx-auto">
+<div class="relative rounded-3xl bg-primary-container text-on-primary p-space-xl md:p-space-3xl overflow-hidden shadow-2xl">
+<!-- Ambient decorative shapes contained in card -->
+<div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-secondary/30 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-16 -bottom-16 w-80 h-80 rounded-full bg-tertiary-container/40 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl mx-auto text-center flex flex-col items-center">
+<span class="px-space-md py-1 rounded-full bg-surface-container-lowest/10 text-secondary-fixed font-label-caps text-label-caps uppercase tracking-wider mb-space-md">
+            Exam Season Readiness
+          </span>
+<h2 class="font-headline-lg text-headline-lg text-on-primary mb-space-sm tracking-tight">
+            Ace your next exam without pulling an all-nighter.
+          </h2>
+<p class="font-body-editorial-lg text-body-editorial-lg text-on-primary/90 mb-space-xl">
+            Join over 85,000 students achieving deeper mastery with Lumina today. Verify your institutional email for an instant 3-month trial.
+          </p>
+<!-- Single Input Field for .edu email & Submit -->
+<form class="w-full max-w-lg flex flex-col sm:flex-row gap-space-xs mb-space-md" id="edu-claim-form" onsubmit="event.preventDefault(); const res = document.getElementById('claim-result'); res.classList.remove('hidden');">
+<div class="relative flex-1">
+<input class="w-full h-12 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-ui-base placeholder:text-on-surface-variant/60 focus:outline-none shadow-sm" placeholder="name@university.edu" required="" type="email">
+</div>
+<button class="h-12 px-space-lg rounded-lg bg-secondary-container text-on-secondary-container font-body-ui-semibold text-body-ui-semibold hover:bg-secondary-fixed transition-colors flex items-center justify-center gap-1 shrink-0 shadow-sm" type="submit">
+<span>Claim 3 Months Free Pro</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<div class="hidden px-space-md py-space-xs rounded bg-surface-container-lowest/20 text-on-primary font-body-ui-sm mb-space-sm" id="claim-result">
+            🎓 Instant link dispatched! Check your academic inbox to unlock Pro.
+          </div>
+<p class="font-label-code text-label-code text-on-primary/70">
+            Instant activation • Works seamlessly on Web, macOS, iOS, and Android
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Tour Video Modal (Clean Vanillla JS Overlay) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/60 backdrop-blur-sm hidden" id="tour-modal">
+<div class="bg-surface-container-lowest rounded-2xl max-w-2xl w-full mx-gutter-mobile p-space-lg shadow-2xl relative">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px]">play_circle</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Lumina 2.4 Interactive Tour</h4>
+</div>
+<button class="p-space-2xs rounded-lg hover:bg-surface-container-low text-on-surface-variant" id="close-tour-modal">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Video / Presentation Canvas Mockup -->
+<div class="w-full aspect-video rounded-xl bg-surface-container flex flex-col items-center justify-center p-space-xl text-center relative overflow-hidden">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-lg mb-space-sm">
+<span class="material-symbols-outlined text-[36px]">play_arrow</span>
+</div>
+<h5 class="font-headline-sm text-headline-sm text-on-surface mb-space-2xs">Cognitive Study Engine in Action</h5>
+<p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant max-w-[40ch]">
+          Demonstrating syllabus PDF ingestion, automated FSRS-4.5 interval computation, and zero-hallucination recall drills.
+        </p>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<span class="font-label-code text-label-code text-on-surface-variant">Runtime: 02:14 • 1080p Scholarly Overview</span>
+<a class="px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary font-body-ui-semibold text-body-ui-sm hover:bg-primary" data-path="get-started" href="#">
+          Launch App Directly
+        </a>
+</div>
+</div>
+</div>
+<script>
+    (function() {
+      const modal = document.getElementById('tour-modal');
+      const trigger = document.getElementById('tour-modal-trigger');
+      const closeBtn = document.getElementById('close-tour-modal');
+
+      if (trigger && modal && closeBtn) {
+        trigger.addEventListener('click', function() {
+          modal.classList.remove('hidden');
+        });
+        closeBtn.addEventListener('click', function() {
+          modal.classList.add('hidden');
+        });
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            modal.classList.add('hidden');
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest"><div class="max-w-[1280px] mx-auto px-gutter-desktop pt-space-2xl pb-space-xl"><div class="rounded-xl bg-surface-container-low p-space-xl mb-space-2xl flex flex-col md:flex-row items-center justify-between gap-space-lg"><div class="max-w-max-text-ch"><div class="flex items-center gap-space-xs mb-space-2xs"><span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary font-semibold">Student Academic Grant</span></div><h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-2xs">Academic pricing for higher education &amp; research.</h4><p class="font-body-ui-base text-body-ui-base text-on-surface-variant">Qualifying undergraduate, graduate, and post-doc scholars receive 50% lifetime access with institutional .edu authentication.</p></div><a class="inline-flex items-center px-space-lg py-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-body-ui-semibold text-body-ui-semibold hover:bg-surface-container-high transition-colors" data-path="student-verification" href="#">Verify University ID</a></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-2xl"><div class="lg:col-span-2 pr-space-lg"><div class="flex items-center gap-space-xs mb-space-sm"><img alt="Brand logo. - Primary color: #3730a3 - Font: newsreader - Mode: light - Roundness: rounded-sm" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W-KAUClYxNqlqIk6Mko0vO_pF8UXcXtDJWQ_G04a7fi-t2Go1is4-tNMNjcJtc6GAo5mAWNJTKTwm5_nXegFPcrvHFQNJ3bEreYuIW9T_OuJbt36R47zifrxu9uHXKV5b3oNRaEv_mEXeICHSvldH_OuoiXdDHKTSHEFU54rkVzmHcCr_GbsTzrRNcrCkK-qapBLuqU04eQj0CR5LfSjNRKAjkEwLSZm-iP6lBYkTMDGMZ8Jies0qsPbE"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">Lumina AI</span></div><p class="font-body-editorial-base text-body-editorial-base text-on-surface-variant mb-space-lg max-w-[40ch]">A serene, distraction-free intellectual workspace for deep research, spaced active recall, and rigorous academic synthesis.</p><div class="flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-secondary-container inline-block"></span>Operational • Neural Engines Online</div></div><div><h5 class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface mb-space-md font-semibold">Product</h5><ul class="space-y-space-sm font-body-ui-base text-body-ui-base text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" data-path="features" href="#">Summary AI</a></li><li><a class="hover:text-on-surface transition-colors" data-path="features" href="#">Spaced Retention</a></li><li><a class="hover:text-on-surface transition-colors" data-path="features" href="#">Practice Quizzes</a></li><li><a class="hover:text-on-surface transition-colors" data-path="features" href="#">Tutor Mode</a></li></ul></div><div><h5 class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface mb-space-md font-semibold">Resources</h5><ul class="space-y-space-sm font-body-ui-base text-body-ui-base text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" data-path="methodology" href="#">Cognitive Study Guide</a></li><li><a class="hover:text-on-surface transition-colors" data-path="features" href="#">Syllabus Importer</a></li><li><a class="hover:text-on-surface transition-colors" data-path="methodology" href="#">Research Papers</a></li><li><a class="hover:text-on-surface transition-colors" data-path="system-status" href="#">System Status</a></li></ul></div><div><h5 class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface mb-space-md font-semibold">Company</h5><ul class="space-y-space-sm font-body-ui-base text-body-ui-base text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" data-path="stories" href="#">About Lumina</a></li><li><a class="hover:text-on-surface transition-colors" data-path="methodology" href="#">Manifesto</a></li><li><a class="hover:text-on-surface transition-colors" data-path="privacy-data" href="#">Privacy &amp; Data</a></li><li><a class="hover:text-on-surface transition-colors" data-path="careers" href="#">Careers</a></li></ul></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md font-body-ui-sm text-body-ui-sm text-on-surface-variant"><p>© 2025 Lumina Learning Technologies Inc. All rights reserved.</p><div class="flex items-center gap-space-lg"><a class="hover:text-on-surface transition-colors" data-path="privacy-data" href="#">Scholarly Integrity</a><a class="hover:text-on-surface transition-colors" data-path="privacy-data" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" data-path="privacy-data" href="#">Terms of Service</a></div></div></div></footer></body></html>

@@ -4,114 +4,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <!-- 1. Google Fonts HTML links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+      
+        <!-- 2. CSS inside <style> tags -->
+        <style>
+          .plus-jakarta-sans-regular {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+          }
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+        </style>
+      </head>
+      <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+      <script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                colors: {
+                  "surface-container-highest": "#ede0db",
+                  "on-primary-fixed": "#390c00",
+                  "surface-bright": "#fff8f6",
+                  "on-tertiary-fixed": "#002112",
+                  "on-tertiary-fixed-variant": "#224f39",
+                  "primary-fixed": "#ffdbcf",
+                  "surface-container": "#f9ebe6",
+                  "on-secondary-fixed-variant": "#204489",
+                  "surface": "#fff8f6",
+                  "on-background": "#211a17",
+                  "secondary-container": "#93b2fe",
+                  "error": "#ba1a1a",
+                  "on-surface-variant": "#57423b",
+                  "tertiary-fixed-dim": "#a1d1b4",
+                  "surface-variant": "#ede0db",
+                  "inverse-surface": "#362f2c",
+                  "outline": "#8a726a",
+                  "tertiary": "#38654d",
+                  "tertiary-container": "#507e65",
+                  "surface-container-lowest": "#ffffff",
+                  "inverse-primary": "#ffb59c",
+                  "on-secondary-fixed": "#001945",
+                  "primary-container": "#bf542c",
+                  "primary-fixed-dim": "#ffb59c",
+                  "on-secondary": "#ffffff",
+                  "surface-container-low": "#fff1ec",
+                  "on-error": "#ffffff",
+                  "on-surface": "#211a17",
+                  "surface-dim": "#e5d7d2",
+                  "on-tertiary": "#ffffff",
+                  "secondary-fixed-dim": "#b0c6ff",
+                  "inverse-on-surface": "#fceee9",
+                  "surface-container-high": "#f3e5e0",
+                  "error-container": "#ffdad6",
+                  "on-tertiary-container": "#f6fff6",
+                  "on-primary": "#ffffff",
+                  "on-primary-fixed-variant": "#822801",
+                  "primary": "#9f3c16",
+                  "outline-variant": "#dec0b7",
+                  "secondary": "#3c5ca2",
+                  "surface-tint": "#a23e18",
+                  "tertiary-fixed": "#bceecf",
+                  "background": "#fff8f6",
+                  "on-error-container": "#93000a",
+                  "on-secondary-container": "#1f4287",
+                  "secondary-fixed": "#d9e2ff",
+                  "on-primary-container": "#fffbff"
+                },
+                fontFamily: {
+                  "body-sm": ["Plus Jakarta Sans"],
+                  "headline-sm": ["Newsreader"],
+                  "label-md": ["Plus Jakarta Sans"],
+                  "headline-md": ["Newsreader"],
+                  "headline-lg": ["Newsreader"],
+                  "headline-lg-mobile": ["Newsreader"],
+                  "body-lg": ["Plus Jakarta Sans"],
+                  "body-md": ["Plus Jakarta Sans"],
+                  "label-lg": ["Plus Jakarta Sans"],
+                  "label-sm": ["Plus Jakarta Sans"],
+                  "display-mobile": ["Newsreader"],
+                  "display": ["Newsreader"]
+                }
+              }
+            }
+          };
+        </script>
+
+
     <title>ai study assistant</title>
+    <style>
+        .cta-note {
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 
-<body>
-    <section>
-        <header>
-            <h1>AI Study Assistant</h1>
-            <div class="logo">
-                <img src="logo.png" alt="AI Study Assistant Logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">for students</a></li>
-                    <li><a href="contact.html">contacts</a></li>
-                </ul>
-            </nav>
-
-            <!-- action buttons -->
-            <div class="top buttons">
-                <a href="login.html">login</a>
-                <a href="signup.html">signup</a>
-            </div>
-        </header>
-    </section>
-
-    <section class="content">
-        <div class="main">
-            <h2>Master Any Subject Powered By <span> Intelligent Synthesis,</span> Not Visual Distactions.</h2>
-            <!--&nbsp; -->
-            <p>"Turn complex lectures, dense textbooks, and syllabus milestones into active recall schedules, adaptive
-                practice quizzes, and an empathetic AI tutor grounded strictly in your verified notes."</p>
-
-            <!-- cta buttons -->
-            <div class="cta buttons">
-                <a href="login.html">start studying for free</a>
-                <a href="signup.html">watch 2 min demo</a>
-            </div>
-
-            <section class="scholars">
-                <div>
-                    <p>Loved By Scholars And Researchers at;</p>
-                    <div>
-                        <span> stanford</span>
-                        <span> MIT</span>
-                        <span> Oxford</span>
-                        <span> Cambridge</span>
-                        <span> Hopkins</span>
-                    </div>
+<body class="bg-surface text-on-surface antialiased selection:bg-primary-fixed selection:text-primary">
+    <section class="body-container">
+        <div class="fixed top-4 right-0 left-0 z-50 flex justify-center px-4 pointer-events-none">
+            <header class="pointer-events-auto w-full max-w-5xl h-16 rounded-full bg-white/85 backdrop-blur-xl border border-outline-variant/60 shadow-[0_8px_32px_rgba(159,60,22,0.08),0_2px_8px_rgba(0,0,0,0.04)] px-4 sm:px-6 flex items-center justify-between transition-all">
+                <h1>AI Study Assistant</h1>
+                <div class="logo">
+                    <img src="logo.png" alt="AI Study Assistant Logo">
                 </div>
-            </section>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">for students</a></li>
+                        <li><a href="contact.html">contacts</a></li>
+                    </ul>
+                </nav>
 
-            <section class="features">
-                <div>
-                    <h3>Everything you need to turn raw course matrials into long-term retention.</h3>
-                    <!--&nbsp; -->
-                    <p>Designed strictly to respect cognitive capacity. No flashing gamification rings, no
-                        distractions—only structured academic mastery.</p>
+                <!-- action buttons -->
+                <div class="top buttons">
+                    <a href="login.html">login</a>
+                    <a href="signup.html">signup</a>
                 </div>
-                <!--cards-->
-                <div class="cards">
-                    <div class="orange-card">
-                        <div></div>
-                        <h4>smart summaries</h4>
-                        <p>Automated key-takeaway extraction from dense 80-page PDFs, recorded audio lectures, and
-                            scanned textbooks with zero signal loss.</p>
-                    </div>
-                    <div class="blue-card">
-                        <div></div>
-                        <h4>adaptive flashcards</h4>
-                        <p>Spaced-repetition decks generated dynamically using the SM-2 algorithmic model, auto-syncing
-                            with your exam calendar for optimal retention.</p>
-                    </div>
-                    <div class="green-card">
-                        <div></div>
-                        <h4>context-aware tutor</h4>
-                        <p>Interactive Socratic dialogue strictly grounded in your syllabus. Never hallucinates; always
-                            cites the exact slide, timestamp, and paragraph.</p>
-                    </div>
-            </section>
-
-            <section class="transform">
-                <div>
-                    <h3>Everything you need to turn raw course matrials into long-term retention.</h3>
-                    <!--&nbsp; -->
-                    <p>Designed strictly to respect cognitive capacity. No flashing gamification rings, no
-                        distractions—only structured academic mastery.</p>
-                </div>
-                <!--cards-->
-                <div class="cards">
-                    <div class="card-one">
-                        <h4>smart summaries</h4>
-                        <p>Automated key-takeaway extraction from dense 80-page PDFs, recorded audio lectures, and scanned textbooks with zero signal loss.</p>
-                        <div></div>
-                    </div>
-                    <div class="card-two">
-                        <h4>adaptive flashcards</h4>
-                        <p>Spaced-repetition decks generated dynamically using the SM-2 algorithmic model, auto-syncing with your exam calendar for optimal retention.</p>
-                        <div></div>
-                    </div>
-                    <div class="card-three">
-                        <h4>context-aware tutor</h4>
-                        <p>Interactive Socratic dialogue strictly grounded in your syllabus. Never hallucinates; always cites the exact slide, timestamp, and paragraph.</p>
-                        <div></div>
-                    </div>
-            </section>
+            </header>
         </div>
+
+
+        <section class="content">
+            <div class="main">
+                <h2>Master Any Subject Powered By <span> Intelligent Synthesis,</span> Not Visual Distactions.</h2>
+                <!--&nbsp; -->
+                <p>"Turn complex lectures, dense textbooks, and syllabus milestones into active recall schedules,
+                    adaptive
+                    practice quizzes, and an empathetic AI tutor grounded strictly in your verified notes."</p>
+
+                <!-- cta buttons -->
+                <div class="cta buttons">
+                    <a href="login.html">start studying for free</a>
+                    <a href="signup.html">watch 2 min demo</a>
+                </div>
+
+        </section>
+
+        <section class="scholars">
+            <div>
+                <p>Loved By Scholars And Researchers at;</p>
+                <div>
+                    <span> stanford</span>
+                    <span> MIT</span>
+                    <span> Oxford</span>
+                    <span> Cambridge</span>
+                    <span> Hopkins</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div>
+                <h3>Everything you need to turn raw course matrials into long-term retention.</h3>
+                <!--&nbsp; -->
+                <p>Designed strictly to respect cognitive capacity. No flashing gamification rings, no
+                    distractions—only structured academic mastery.</p>
+            </div>
+            <!--cards-->
+            <div class="cards">
+                <div class="orange-card">
+                    <div></div>
+                    <h4>smart summaries</h4>
+                    <p>Automated key-takeaway extraction from dense 80-page PDFs, recorded audio lectures, and
+                        scanned textbooks with zero signal loss.</p>
+                </div>
+                <div class="blue-card">
+                    <div></div>
+                    <h4>adaptive flashcards</h4>
+                    <p>Spaced-repetition decks generated dynamically using the SM-2 algorithmic model, auto-syncing
+                        with your exam calendar for optimal retention.</p>
+                </div>
+                <div class="green-card">
+                    <div></div>
+                    <h4>context-aware tutor</h4>
+                    <p>Interactive Socratic dialogue strictly grounded in your syllabus. Never hallucinates; always
+                        cites the exact slide, timestamp, and paragraph.</p>
+                </div>
+        </section>
+
+        <section class="transform">
+            <div>
+                <h3>Everything you need to turn raw course matrials into long-term retention.</h3>
+                <!--&nbsp; -->
+                <p>Designed strictly to respect cognitive capacity. No flashing gamification rings, no
+                    distractions—only structured academic mastery.</p>
+            </div>
+            <!--cards-->
+            <div class="cards">
+                <div class="card-one">
+                    <h4>smart summaries</h4>
+                    <p>Automated key-takeaway extraction from dense 80-page PDFs, recorded audio lectures, and scanned
+                        textbooks with zero signal loss.</p>
+                    <div></div>
+                </div>
+                <div class="card-two">
+                    <h4>adaptive flashcards</h4>
+                    <p>Spaced-repetition decks generated dynamically using the SM-2 algorithmic model, auto-syncing with
+                        your exam calendar for optimal retention.</p>
+                    <div></div>
+                </div>
+                <div class="card-three">
+                    <h4>context-aware tutor</h4>
+                    <p>Interactive Socratic dialogue strictly grounded in your syllabus. Never hallucinates; always
+                        cites the exact slide, timestamp, and paragraph.</p>
+                    <div></div>
+                </div>
+        </section>
+        <section class="testimonial">
+            <div class="testimonial-content">
+                <h3>Everything you need to turn raw course matrials into long-term retention.</h3>
+                <!--&nbsp; -->
+                <p>Designed strictly to respect cognitive capacity. No flashing gamification rings, no
+                    distractions—only structured academic mastery.</p>
+            </div>
+            <!--cards-->
+            <div class="cards">
+                <div class="test-card one">
+                    <h4>smart summaries</h4>
+                    <p>Automated key-takeaway extraction from dense 80-page PDFs, recorded audio lectures, and scanned
+                        textbooks with zero signal loss.</p>
+
+                </div>
+                <div class="test-card two">
+                    <h4>adaptive flashcards</h4>
+                    <p>Spaced-repetition decks generated dynamically using the SM-2 algorithmic model, auto-syncing with
+                        your exam calendar for optimal retention.</p>
+
+                </div>
+                <div class="test-card three">
+                    <h4>context-aware tutor</h4>
+                    <p>Interactive Socratic dialogue strictly grounded in your syllabus. Never hallucinates; always
+                        cites the exact slide, timestamp, and paragraph.</p>
+
+                </div>
+        </section>
+
+        <section class="cta-banner">
+            <div class="cta-banner-content">
+                <h3>Reclaim 15 + hours every week without compromising academic rigor.</h3>
+
+                <p>join over 42000 university students, medical residents, and PhD candidates who turn dense courses
+                    into second nature.</p>
+            </div>
+
+            <div class="cta buttons">
+                <a href="#">Begin your 14-day free trial</a>
+            </div>
+            <p class="cta-note">
+                no credit card required. Cancel anytime. 100% risk-free.
+            </p>
+
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#">summary ai</a></li>
+                    <li><a href="#">adaptive flashcards</a></li>
+                    <li><a href="#">context-aware tutor</a></li>
+                    <li><a href="#">spaced retention</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">cognitive study guides</a></li>
+                    <li><a href="#">syllabus importer</a></li>
+                    <li><a href="#">research papers</a></li>
+                    <li><a href="#">system status</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h4>Newsletter</h4>
+                <p class ="cta-note">get weekly study frameworks and product updates.</p>
+                <form action="#" method="post">
+                    <label for="newsletter-email">Email address</label>
+                    <input type="email" id="newsletter-email" name="email" placeholder="you@gmail.com">
+                    <button type="submit">Subscribe</button>
+                </form>
+                <ul>
+                    <li><a href="https://www.linkedin.com/company/ai-study-assistant">LinkedIn</a></li>
+                    <li><a href="https://twitter.com/ai_study_assist">Twitter</a></li>
+                    <li><a href="https://www.facebook.com/ai.study.assistant">Facebook</a></li>
+                </ul>
+            </div>
+        </footer>
     </section>
 </body>
 
