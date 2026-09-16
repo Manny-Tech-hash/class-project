@@ -4,151 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <head>
-        <!-- 1. Google Fonts HTML links -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-      
-        <!-- 2. CSS inside <style> tags -->
-        <style>
-          .plus-jakarta-sans-regular {
-            font-family: "Plus Jakarta Sans", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-          }
-    @layer base {
-      html, body { margin: 0; padding: 0; }
-      body { overscroll-behavior: none; }
-      main > :first-child { margin-top: 0 !important; }
-      main > :last-child { margin-bottom: 0 !important; }
-    }
-    ::-webkit-scrollbar { display: none; }
-        </style>
-      </head>
-      <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-      <script id="tailwind-config">
-          tailwind.config = {
-            darkMode: "class",
-            theme: {
-              extend: {
-                colors: {
-                  "surface-container-highest": "#ede0db",
-                  "on-primary-fixed": "#390c00",
-                  "surface-bright": "#fff8f6",
-                  "on-tertiary-fixed": "#002112",
-                  "on-tertiary-fixed-variant": "#224f39",
-                  "primary-fixed": "#ffdbcf",
-                  "surface-container": "#f9ebe6",
-                  "on-secondary-fixed-variant": "#204489",
-                  "surface": "#fff8f6",
-                  "on-background": "#211a17",
-                  "secondary-container": "#93b2fe",
-                  "error": "#ba1a1a",
-                  "on-surface-variant": "#57423b",
-                  "tertiary-fixed-dim": "#a1d1b4",
-                  "surface-variant": "#ede0db",
-                  "inverse-surface": "#362f2c",
-                  "outline": "#8a726a",
-                  "tertiary": "#38654d",
-                  "tertiary-container": "#507e65",
-                  "surface-container-lowest": "#ffffff",
-                  "inverse-primary": "#ffb59c",
-                  "on-secondary-fixed": "#001945",
-                  "primary-container": "#bf542c",
-                  "primary-fixed-dim": "#ffb59c",
-                  "on-secondary": "#ffffff",
-                  "surface-container-low": "#fff1ec",
-                  "on-error": "#ffffff",
-                  "on-surface": "#211a17",
-                  "surface-dim": "#e5d7d2",
-                  "on-tertiary": "#ffffff",
-                  "secondary-fixed-dim": "#b0c6ff",
-                  "inverse-on-surface": "#fceee9",
-                  "surface-container-high": "#f3e5e0",
-                  "error-container": "#ffdad6",
-                  "on-tertiary-container": "#f6fff6",
-                  "on-primary": "#ffffff",
-                  "on-primary-fixed-variant": "#822801",
-                  "primary": "#9f3c16",
-                  "outline-variant": "#dec0b7",
-                  "secondary": "#3c5ca2",
-                  "surface-tint": "#a23e18",
-                  "tertiary-fixed": "#bceecf",
-                  "background": "#fff8f6",
-                  "on-error-container": "#93000a",
-                  "on-secondary-container": "#1f4287",
-                  "secondary-fixed": "#d9e2ff",
-                  "on-primary-container": "#fffbff"
-                },
-                fontFamily: {
-                  "body-sm": ["Plus Jakarta Sans"],
-                  "headline-sm": ["Newsreader"],
-                  "label-md": ["Plus Jakarta Sans"],
-                  "headline-md": ["Newsreader"],
-                  "headline-lg": ["Newsreader"],
-                  "headline-lg-mobile": ["Newsreader"],
-                  "body-lg": ["Plus Jakarta Sans"],
-                  "body-md": ["Plus Jakarta Sans"],
-                  "label-lg": ["Plus Jakarta Sans"],
-                  "label-sm": ["Plus Jakarta Sans"],
-                  "display-mobile": ["Newsreader"],
-                  "display": ["Newsreader"]
-                }
-              }
-            }
-          };
-        </script>
 
+    <title>AI Study Assistant</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+        rel="stylesheet">
 
-    <title>ai study assistant</title>
-    <style>
-        .cta-note {
-            font-size: 0.8rem;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+
 </head>
 
-<body class="bg-surface text-on-surface antialiased selection:bg-primary-fixed selection:text-primary">
-    <section class="body-container">
-        <div class="fixed top-4 right-0 left-0 z-50 flex justify-center px-4 pointer-events-none">
-            <header class="pointer-events-auto w-full max-w-5xl h-16 rounded-full bg-white/85 backdrop-blur-xl border border-outline-variant/60 shadow-[0_8px_32px_rgba(159,60,22,0.08),0_2px_8px_rgba(0,0,0,0.04)] px-4 sm:px-6 flex items-center justify-between transition-all">
-                <h1>AI Study Assistant</h1>
-                <div class="logo">
-                    <img src="logo.png" alt="AI Study Assistant Logo">
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">for students</a></li>
-                        <li><a href="contact.html">contacts</a></li>
-                    </ul>
-                </nav>
+<body>
+    <div class="topbar-wrap">
+        <header class="topbar">
+            <a class="brand" href="#">
+                <span class="brand-mark">
+                    <span class="material-symbols-outlined">auto_stories</span>
+                </span>
+                <span class="brand-name">AI Study Assistant</span>
+            </a>
+            <nav class="nav-links">
 
-                <!-- action buttons -->
-                <div class="top buttons">
-                    <a href="login.html">login</a>
-                    <a href="signup.html">signup</a>
-                </div>
-            </header>
-        </div>
+                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">How it works</a>
+                <a class="nav-link" href="#">For students</a>
+                <a class="nav-link" href="#">Contacts</a>
 
+            </nav>
 
-        <section class="content">
-            <div class="main">
-                <h2>Master Any Subject Powered By <span> Intelligent Synthesis,</span> Not Visual Distactions.</h2>
+            <!-- action buttons -->
+            <div class="topbar-actions">
+                <a class="link-login" href="#">Login</a>
+                <a class="btn btn-gradient btn-sm" href="#">Get Started</a>
+            </div>
+        </header>
+    </div>
+
+    <main class="page">
+        <section class="hero">
+
+            <div class="glow glow-top"></div>
+            <div class="glow glow-left"></div>
+            <div class="glow glow-right"></div>
+
+            <div class="hero-copy">
+                <h1 class="hero-title">Master Any Subject Powered By <span class="hero-accent"> Intelligent
+                        Synthesis,</span> Not Visual Distactions.</h1>
                 <!--&nbsp; -->
                 <p>"Turn complex lectures, dense textbooks, and syllabus milestones into active recall schedules,
                     adaptive
                     practice quizzes, and an empathetic AI tutor grounded strictly in your verified notes."</p>
+            </div>
 
-                <!-- cta buttons -->
-                <div class="cta buttons">
-                    <a href="login.html">start studying for free</a>
-                    <a href="signup.html">watch 2 min demo</a>
-                </div>
+            <!-- cta buttons -->
+            <div class="cta-row">
+                <a class="btn btn-gradient btn-lg" href="#">
+                    <span>Start Studying For Free</span>
+                    <span class="material-symbols-outlined icon-18">arrow_forward</span>
+                </a>
+                <button class="btn btn-outline btn-lg" type="button">
+                    <span class="material-symbols-outlined icon-22 text-primary">play_circle</span>
+                    <span>Watch 2-Min Demo</span>
+                </button>
+            </div>
+
+
+            </div>
 
         </section>
 
@@ -267,51 +192,61 @@
             </p>
 
         </section>
+    </main>
 
-        <footer class="footer">
-            <div class="footer-content">
-                <h4>Product</h4>
-                <ul>
-                    <li><a href="#">summary ai</a></li>
-                    <li><a href="#">adaptive flashcards</a></li>
-                    <li><a href="#">context-aware tutor</a></li>
-                    <li><a href="#">spaced retention</a></li>
-                </ul>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-content">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">summary ai</a></li>
+                        <li><a href="#">adaptive flashcards</a></li>
+                        <li><a href="#">context-aware tutor</a></li>
+                        <li><a href="#">spaced retention</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-content">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">cognitive study guides</a></li>
+                        <li><a href="#">syllabus importer</a></li>
+                        <li><a href="#">research papers</a></li>
+                        <li><a href="#">system status</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-content">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-list">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-content">
+                    <h4 class="footer-heading footer-heading-tight">Newsletter</h4>
+                    <p class="footer-note">get weekly study frameworks and product updates.</p>
+                    <form class="signup" action="#" method="post">
+                        <label class="visually-hidden" for="signup-email">Email address</label>
+                        <input class="signup-input" type="email" id="signup-email" name="email"
+                            placeholder="you@gmail.com">
+                        <button class="signup-btn" type="submit">Subscribe</button>
+                    </form>
+
+                </div>
             </div>
-            <div class="footer-content">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="#">cognitive study guides</a></li>
-                    <li><a href="#">syllabus importer</a></li>
-                    <li><a href="#">research papers</a></li>
-                    <li><a href="#">system status</a></li>
-                </ul>
+
+            <div class="footer-base">
+                <p>&copy; 2026 AI Study Assistant. All rights reserved.</p>
             </div>
-            <div class="footer-content">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h4>Newsletter</h4>
-                <p class ="cta-note">get weekly study frameworks and product updates.</p>
-                <form action="#" method="post">
-                    <label for="newsletter-email">Email address</label>
-                    <input type="email" id="newsletter-email" name="email" placeholder="you@gmail.com">
-                    <button type="submit">Subscribe</button>
-                </form>
-                <ul>
-                    <li><a href="https://www.linkedin.com/company/ai-study-assistant">LinkedIn</a></li>
-                    <li><a href="https://twitter.com/ai_study_assist">Twitter</a></li>
-                    <li><a href="https://www.facebook.com/ai.study.assistant">Facebook</a></li>
-                </ul>
-            </div>
-        </footer>
-    </section>
+            
+        </div>
+    </footer>
 </body>
 
 </html>
