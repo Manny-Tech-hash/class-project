@@ -41,6 +41,13 @@
                 <a class="link-login" href="#">Login</a>
                 <a class="btn btn-gradient btn-sm" href="#">Get Started</a>
             </div>
+
+            <!-- hamburger menu -->
+            <button class="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </header>
     </div>
 
@@ -77,46 +84,258 @@
 
         </section>
 
-        <section class="scholars">
-            <div>
-                <p>Loved By Scholars And Researchers at;</p>
-                <div>
-                    <span> stanford</span>
-                    <span> MIT</span>
-                    <span> Oxford</span>
-                    <span> Cambridge</span>
-                    <span> Hopkins</span>
+        <section class="logos" id="integrations">
+            <div class="container">
+                <p class="logos-label">
+                    Trusted by researchers and students at leading academic institutions
+                </p>
+                <div class="logo-grid">
+                    <div class="logo logo-serif logo-wide">STANFORD</div>
+                    <div class="logo logo-serif logo-wider">OXFORD</div>
+                    <div class="logo logo-sans logo-tight">M.I.T.</div>
+                    <div class="logo logo-serif logo-wide">CAMBRIDGE</div>
+                    <div class="logo logo-sans">JOHNS HOPKINS</div>
+                    <div class="logo logo-serif logo-tight">HARVARD MED</div>
                 </div>
             </div>
         </section>
 
-        <section class="features">
-            <div>
-                <h3>Everything you need to turn raw course matrials into long-term retention.</h3>
-                <!--&nbsp; -->
-                <p>Designed strictly to respect cognitive capacity. No flashing gamification rings, no
-                    distractions—only structured academic mastery.</p>
+        <!-- Features -->
+        <section class="features" id="features">
+            <div class="section-head">
+                <span class="eyebrow">Engineered for Deep Focus</span>
+                <h2 class="section-title">Everything you need to turn raw course materials into long-term retention.
+                </h2>
+                <p class="section-lead">
+                    Designed strictly to respect cognitive capacity. No flashing gamification rings, no
+                    distractions—only
+                    structured academic mastery.
+                </p>
             </div>
-            <!--cards-->
-            <div class="cards">
-                <div class="orange-card">
-                    <div></div>
-                    <h4>smart summaries</h4>
-                    <p>Automated key-takeaway extraction from dense 80-page PDFs, recorded audio lectures, and
-                        scanned textbooks with zero signal loss.</p>
+
+            <div class="feature-grid">
+
+                <!-- Card 1 — coral -->
+                <article class="feature-card feature-coral">
+                    <div>
+                        <div class="preview preview-coral">
+                            <div class="preview-head preview-head-coral">
+                                <span class="preview-label text-primary">
+                                    <span class="material-symbols-outlined icon-16">timer</span> 4 min read (Orig. 64
+                                    pgs)
+                                </span>
+                                <span class="preview-chip chip-primary">PDF Import</span>
+                            </div>
+                            <div class="skeleton">
+                                <div class="bar bar-dark" style="width:75%"></div>
+                                <div class="bar" style="width:100%"></div>
+                                <div class="bar" style="width:83%"></div>
+                                <div class="equation">
+                                    <span class="equation-label">Key Equation:</span>
+                                    <span class="equation-value">ΔG°' = -nFE°'cell</span>
+                                </div>
+                            </div>
+                            <div class="preview-foot text-primary">
+                                <span>9 Key Concepts Identified</span>
+                                <span class="material-symbols-outlined icon-18">check_circle</span>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Smart Summaries</h3>
+                        <p class="card-text">
+                            Automated key-takeaway extraction from dense 80-page PDFs, recorded audio lectures, and
+                            scanned textbooks
+                            with zero signal loss.
+                        </p>
+                    </div>
+                    <div class="card-link text-primary">
+                        <span class="card-link-text">Read synthesis methodology</span>
+                        <span class="material-symbols-outlined icon-16">arrow_forward</span>
+                    </div>
+                </article>
+
+                <!-- Card 2 — azure -->
+                <article class="feature-card feature-azure">
+                    <div>
+                        <div class="preview preview-azure">
+                            <div class="preview-head preview-head-azure">
+                                <span class="preview-label text-secondary">Card 4 of 32 (SM-2 Queue)</span>
+                                <span class="preview-chip chip-secondary">Due Today</span>
+                            </div>
+                            <div class="recall">
+                                <span class="recall-label">Prompt / Recall</span>
+                                <p class="recall-text">What factor governs the conformational switch in the β-subunit?
+                                </p>
+                            </div>
+                            <div class="grades">
+                                <div class="grade grade-again">Again<br><span>&lt;10m</span></div>
+                                <div class="grade grade-hard">Hard<br><span>1d</span></div>
+                                <div class="grade grade-good">Good<br><span>3d</span></div>
+                                <div class="grade grade-easy">Easy<br><span>7d</span></div>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Adaptive Flashcards</h3>
+                        <p class="card-text">
+                            Spaced-repetition decks generated dynamically using the SM-2 algorithmic model, auto-syncing
+                            with your
+                            exam calendar for optimal retention.
+                        </p>
+                    </div>
+                    <div class="card-link text-secondary">
+                        <span class="card-link-text">Explore algorithmic model</span>
+                        <span class="material-symbols-outlined icon-16">arrow_forward</span>
+                    </div>
+                </article>
+
+                <!-- Card 3 — emerald -->
+                <article class="feature-card feature-emerald">
+                    <div>
+                        <div class="preview preview-emerald">
+                            <div class="preview-head preview-head-emerald">
+                                <span class="dot-emerald"></span>
+                                <span class="preview-label text-emerald-800">Socratic Dialogue</span>
+                            </div>
+                            <div class="chat">
+                                <div class="chat-you">
+                                    <span class="chat-who">You asked:</span> "Can ATP synthase operate in reverse during
+                                    ischemic
+                                    conditions?"
+                                </div>
+                                <div class="chat-bot">
+                                    <span class="chat-who">Scholaris:</span> "Yes. Under low proton motive force, it
+                                    hydrolyzes ATP to
+                                    pump protons back out."
+                                    <div class="chat-cite"><span class="cite">[Lecture 04, Slide 22]</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Context-Aware Tutor</h3>
+                        <p class="card-text">
+                            Interactive Socratic dialogue strictly grounded in your syllabus. Never hallucinates; always
+                            cites the
+                            exact slide, timestamp, and paragraph.
+                        </p>
+                    </div>
+                    <div class="card-link text-emerald-800">
+                        <span class="card-link-text">Audit citation integrity</span>
+                        <span class="material-symbols-outlined icon-16">arrow_forward</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Workflow -->
+        <section class="workflow" id="how-it-works">
+            <div class="container">
+                <div class="section-head section-head-center">
+                    <span class="eyebrow">Structured Workflow</span>
+                    <h2 class="section-title">How Scholaris Transforms Your Study Sessions</h2>
+                    <p class="section-lead section-lead-sm">
+                        From unorganized seminar recordings and messy readings into an effortless daily mastery engine
+                        in three
+                        straightforward steps.
+                    </p>
                 </div>
-                <div class="blue-card">
-                    <div></div>
-                    <h4>adaptive flashcards</h4>
-                    <p>Spaced-repetition decks generated dynamically using the SM-2 algorithmic model, auto-syncing
-                        with your exam calendar for optimal retention.</p>
+
+                <div class="step-grid">
+
+                    <div class="step-card step-card-indigo">
+                        <div>
+                            <div class="step-badge badge-indigo">1</div>
+                            <h3 class="step-title">Upload Course Material</h3>
+                            <p class="step-lead">
+                                Drop lecture recordings, slide decks, syllabi, or sync via Canvas and Notion. Scholaris
+                                handles
+                                multi-format inputs seamlessly.
+                            </p>
+                        </div>
+                        <div class="file-list">
+                            <div class="file-row">
+                                <span class="file-name"><span
+                                        class="material-symbols-outlined icon-19 text-rose-500">picture_as_pdf</span>
+                                    Seminar_Notes.pdf</span>
+                                <span class="file-state state-orange">Parsed</span>
+                            </div>
+                            <div class="file-row">
+                                <span class="file-name"><span
+                                        class="material-symbols-outlined icon-19 text-emerald-600">mic</span>
+                                    Lecture_Oct12.m4a</span>
+                                <span class="file-state state-emerald">Transcribed</span>
+                            </div>
+                            <div class="file-row">
+                                <span class="file-name"><span
+                                        class="material-symbols-outlined icon-19 text-sky-600">slideshow</span>
+                                    Week4_Deck.pptx</span>
+                                <span class="file-state state-sky">Indexed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card step-card-teal">
+                        <div>
+                            <div class="step-badge badge-teal">2</div>
+                            <h3 class="step-title">AI Context Processing</h3>
+                            <p class="step-lead">
+                                Our academic neural engine extracts semantic hierarchies, formulas, and terminology
+                                without loss of
+                                nuance or subtle mathematical precision.
+                            </p>
+                        </div>
+                        <div class="graph-box">
+                            <svg class="graph" viewBox="0 0 260 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="130" cy="40" r="18" fill="#9f3c16"></circle>
+                                <text x="130" y="44" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="9"
+                                    font-weight="700" text-anchor="middle">ATP Synt.</text>
+                                <circle cx="40" cy="20" r="14" fill="#3c5ca2"></circle>
+                                <text x="40" y="24" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="8"
+                                    font-weight="600" text-anchor="middle">F₀ Unit</text>
+                                <line x1="54" y1="23" x2="112" y2="35" stroke="#bf542c" stroke-dasharray="2 2"
+                                    stroke-width="1.5">
+                                </line>
+                                <circle cx="45" cy="62" r="14" fill="#38654d"></circle>
+                                <text x="45" y="66" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="8"
+                                    font-weight="600" text-anchor="middle">pmf (ΔpH)</text>
+                                <line x1="59" y1="59" x2="113" y2="44" stroke="#3c5ca2" stroke-dasharray="2 2"
+                                    stroke-width="1.5">
+                                </line>
+                                <circle cx="215" cy="40" r="15" fill="#bf542c"></circle>
+                                <text x="215" y="44" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="8"
+                                    font-weight="600" text-anchor="middle">F₁ Rotary</text>
+                                <line x1="148" y1="40" x2="200" y2="40" stroke="#38654d" stroke-dasharray="2 2"
+                                    stroke-width="1.5">
+                                </line>
+                            </svg>
+                            <span class="graph-note">Cross-referencing 3 sources in real-time</span>
+                        </div>
+                    </div>
+
+                    <div class="step-card step-card-orange">
+                        <div>
+                            <div class="step-badge badge-orange">3</div>
+                            <h3 class="step-title">Personalized Study Blueprint</h3>
+                            <p class="step-lead">
+                                Receive a daily spaced-repetition queue, distilled study guides, and diagnostic mock
+                                questions
+                                calibrated to your past weak points.
+                            </p>
+                        </div>
+                        <div class="goal-box">
+                            <div class="goal-head">
+                                <span class="goal-label">Today's Retention Goal</span>
+                                <span class="goal-value">82% Mastery</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-fill" style="width:82%"></div>
+                            </div>
+                            <div class="goal-foot">
+                                <span>24 cards reviewed</span>
+                                <span class="text-primary goal-ready">1 diagnostic test ready</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="green-card">
-                    <div></div>
-                    <h4>context-aware tutor</h4>
-                    <p>Interactive Socratic dialogue strictly grounded in your syllabus. Never hallucinates; always
-                        cites the exact slide, timestamp, and paragraph.</p>
-                </div>
+            </div>
         </section>
 
         <section class="transform">
@@ -147,33 +366,86 @@
                     <div></div>
                 </div>
         </section>
-        <section class="testimonial">
-            <div class="testimonial-content">
-                <h3>Everything you need to turn raw course matrials into long-term retention.</h3>
-                <!--&nbsp; -->
-                <p>Designed strictly to respect cognitive capacity. No flashing gamification rings, no
-                    distractions—only structured academic mastery.</p>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="section-head section-head-center">
+                <span class="eyebrow">Scholarly Testimonials</span>
+                <h2 class="section-title">Trusted in Rigorous Environments</h2>
+                <p class="section-lead section-lead-sm">
+                    Read how doctoral researchers, law scholars, and medical residents rely on Scholaris for accuracy and depth.
+                </p>
             </div>
-            <!--cards-->
-            <div class="cards">
-                <div class="test-card one">
-                    <h4>smart summaries</h4>
-                    <p>Automated key-takeaway extraction from dense 80-page PDFs, recorded audio lectures, and scanned
-                        textbooks with zero signal loss.</p>
 
-                </div>
-                <div class="test-card two">
-                    <h4>adaptive flashcards</h4>
-                    <p>Spaced-repetition decks generated dynamically using the SM-2 algorithmic model, auto-syncing with
-                        your exam calendar for optimal retention.</p>
+            <div class="quote-grid">
 
-                </div>
-                <div class="test-card three">
-                    <h4>context-aware tutor</h4>
-                    <p>Interactive Socratic dialogue strictly grounded in your syllabus. Never hallucinates; always
-                        cites the exact slide, timestamp, and paragraph.</p>
+                <figure class="quote quote-amber">
+                    <span class="quote-mark">"</span>
+                    <div>
+                        <div class="stars">
+                            <span class="material-symbols-outlined icon-20 icon-filled">star</span>
+                            <span class="material-symbols-outlined icon-20 icon-filled">star</span>
+                            <span class="material-symbols-outlined icon-20 icon-filled">star</span>
+                            <span class="material-symbols-outlined icon-20 icon-filled">star</span>
+                            <span class="material-symbols-outlined icon-20 icon-filled">star</span>
+                        </div>
+                        <blockquote class="quote-text">
+                            "Scholaris cut my literature review prep time in half while actually deepening my comprehension. It feels
+                            like having a brilliant teaching assistant beside you 24/7."
+                        </blockquote>
+                    </div>
+                    <figcaption class="quote-foot">
+                        <div class="quote-name">Elena Rostova</div>
+                        <div class="quote-role text-primary">PhD Candidate in Neurobiology</div>
+                        <div class="quote-org">University of Oxford</div>
+                    </figcaption>
+                </figure>
 
-                </div>
+                <figure class="quote quote-sky">
+                    <span class="quote-mark">"</span>
+                    <div>
+                        <div class="stars">
+                            <span class="material-symbols-outlined icon-20 icon-filled">star</span>
+                            <span class="material-symbols-outlined icon-20 icon-filled">star</span>
+                            <span class="material-symbols-outlined icon-20 icon-filled">star</span>
+                            <span class="material-symbols-outlined icon-20 icon-filled">star</span>
+                            <span class="material-symbols-outlined icon-20 icon-filled">star</span>
+                        </div>
+                        <blockquote class="quote-text">
+                            "The grounded citations are what won me over. As a law student, hallucinated case citations are fatal.
+                            Scholaris points directly to the judicial opinion page."
+                        </blockquote>
+                    </div>
+                    <figcaption class="quote-foot">
+                        <div class="quote-name">Marcus Vance</div>
+                        <div class="quote-role text-secondary">JD Candidate</div>
+                        <div class="quote-org">Columbia Law School</div>
+                    </figcaption>
+                </figure>
+
+                <figure class="quote quote-emerald">
+                    <span class="quote-mark">"</span>
+                    <div>
+                        <div class="stars">
+                            <span class="material-symbols-outlined icon-20 icon-filled">star</span>
+                            <span class="material-symbols-outlined icon-20 icon-filled">star</span>
+                            <span class="material-symbols-outlined icon-20 icon-filled">star</span>
+                            <span class="material-symbols-outlined icon-20 icon-filled">star</span>
+                            <span class="material-symbols-outlined icon-20 icon-filled">star</span>
+                        </div>
+                        <blockquote class="quote-text">
+                            "Our entire premed study cohort switched to Scholaris. The adaptive spaced repetition decks directly
+                            mirrored our board exam format."
+                        </blockquote>
+                    </div>
+                    <figcaption class="quote-foot">
+                        <div class="quote-name">Dr. Priya Patel</div>
+                        <div class="quote-role text-emerald-800">Resident Physician</div>
+                        <div class="quote-org">Johns Hopkins Medicine</div>
+                    </figcaption>
+                </figure>
+
+            </div>
         </section>
 
         <section class="cta-banner">
@@ -244,7 +516,7 @@
             <div class="footer-base">
                 <p>&copy; 2026 AI Study Assistant. All rights reserved.</p>
             </div>
-            
+
         </div>
     </footer>
 </body>
